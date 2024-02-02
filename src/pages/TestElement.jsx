@@ -28,7 +28,7 @@ export default function TestElement() {
       </TERipple>
 
       <TECollapse show={show}>
-        <div className="block rounded-lg bg-white p-6 shadow-lg dark:bg-neutral-700 dark:text-neutral-50">
+        <div className="block rounded-lg bg-white text-neutral-700 p-6 shadow-lg dark:bg-neutral-700 dark:text-neutral-50">
           Some placeholder content for the collapse component. This panel is
           hidden by default but revealed when the user activates the relevant
           trigger.
