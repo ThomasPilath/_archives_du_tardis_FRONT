@@ -2,7 +2,7 @@
 FROM node:latest as BUILD_STAGE
 LABEL maintainer="pilath.thomas@ikmail.com"
 # Adapter la timezone du server a la timezone locale (pour les logs)
-RUN apk add --no-cache tzdata
+RUN apt-get update && apt-get install -y tzdata
 ENV TZ=Europe/Paris
 RUN cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
 # Exposition du port 3300
@@ -23,7 +23,7 @@ FROM node:latest
 # Répertoire de travail dans le conteneur
 WORKDIR /app
 # Adapter la timezone du server a la timezone locale (pour les logs)
-RUN apk add --no-cache tzdata
+RUN apt-get update && apt-get install -y tzdata
 ENV TZ=Europe/Paris
 RUN cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
 # Faire en sorte de garder que le build de l'app
