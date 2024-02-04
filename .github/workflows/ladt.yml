@@ -25,5 +25,5 @@ jobs:
 
       - name: Build and deploy
         run: |
-          docker build -t ladt:latest .
+          docker build -t pilath/ladt:latest .
           docker push pilath/ladt:latest
