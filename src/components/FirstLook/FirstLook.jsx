@@ -1,4 +1,3 @@
-import { Button } from 'flowbite-react'
 import './FirstLook.css'
 export default function FirstLook() {
     return (
