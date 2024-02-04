@@ -1,0 +1,24 @@
+name: CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-20.04
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 19.9.0-alpine3.17
+
+      - name: Build and deploy
+        run: |
+          docker build -t ladt:latest .
+          docker push ladt:latest
