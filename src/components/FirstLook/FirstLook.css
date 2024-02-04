@@ -1,15 +1,6 @@
-:root{
-    background-color: #0c1024;
-}
-.arrival{
-    margin-left: 50px;
-    margin-bottom: 50px;
-}
-
 .tHold {
-    perspective: 300px;
+    perspective: 500px;
     transform-style: preserve-3d;
-    margin-top: 240px;
 }
 .tPos {
     display: inline-block;
@@ -261,8 +252,6 @@
     display: inline-block;
     border-radius: 999px;
     background: hsl(210,25%,24%);
-    margin-top: -110px;
-    margin-left: -50px;
     overflow: hidden;
     position: relative;
     z-index: -1;
