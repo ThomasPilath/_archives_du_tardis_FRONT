@@ -78,7 +78,7 @@ export default function FirstLook() {
         </aside>
         <button
             type="button"
-            class="inline-block rounded bg-primary text-white shadow-[0_4px_9px_-4px_#000000] hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_#2e3d4c),0_4px_18px_0_#2e3d4c] focus:bg-primary-600">
+            class="inline-block rounded bg-primary text-white hover:bg-primary-600 focus:bg-primary-600">
             <a href="/home" className="px-6 py-4 font-title text-4xl uppercase leading-normal">
                 Entrer dans l'Univers
             </a>
