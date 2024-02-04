@@ -1,8 +1,8 @@
 # Premiére étape pour construire l'app
-FROM node:19.9.0 as BUILD_STAGE
+FROM node:19.9.0-alpine3.17 as BUILD_STAGE
 LABEL maintainer="pilath.thomas@ikmail.com"
 # Adapter la timezone du server a la timezone locale (pour les logs)
-RUN apt install --no-cache tzdata
+RUN apk add --no-cache tzdata
 ENV TZ=Europe/Paris
 RUN cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
 # Exposition du port 3300
@@ -19,11 +19,11 @@ COPY . ./
 RUN npm run build
 
 # Deuxiéme étape pour ne garder que le necessaire
-FROM node:19.9.0
+FROM node:19.9.0-alpine3.17
 # Répertoire de travail dans le conteneur
 WORKDIR /app
 # Adapter la timezone du server a la timezone locale (pour les logs)
-RUN apt install --no-cache tzdata
+RUN apk add --no-cache tzdata
 ENV TZ=Europe/Paris
 RUN cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
 # Faire en sorte de garder que le build de l'app
