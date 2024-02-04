@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 19.9.0
+          node-version: latest
 
       - name: Build and deploy
         run: |

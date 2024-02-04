@@ -1,5 +1,5 @@
 # Premiére étape pour construire l'app
-FROM node:19.9.0-alpine3.17 as BUILD_STAGE
+FROM node:latest as BUILD_STAGE
 LABEL maintainer="pilath.thomas@ikmail.com"
 # Adapter la timezone du server a la timezone locale (pour les logs)
 RUN apk add --no-cache tzdata
@@ -19,7 +19,7 @@ COPY . ./
 RUN npm run build
 
 # Deuxiéme étape pour ne garder que le necessaire
-FROM node:19.9.0-alpine3.17
+FROM node:latest
 # Répertoire de travail dans le conteneur
 WORKDIR /app
 # Adapter la timezone du server a la timezone locale (pour les logs)
