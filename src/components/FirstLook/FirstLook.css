@@ -1,13 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/doctor-who');
 
-html {
-    height: 100%;
-    min-height: 600px;
-}
-body {
-    text-align: center;
-    background: #000;
-}
 .arrival{
     margin-left: 50px;
     margin-bottom: 50px;
@@ -344,9 +336,9 @@ body {
 
 
 @keyframes tLight {
-      0%{ background: #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.5) inset, 0 0 10px 0 rgba(255,255,255,1); }
-     40%{ background: #777; box-shadow: 0 0 0 1px rgba(0,0,0,.5) inset, 0 0 0 0 rgba(255,255,255,.3); }
-     60%{ background: #777; box-shadow: 0 0 0 1px rgba(0,0,0,.5) inset, 0 0 0 0 rgba(255,255,255,.3); }
+    0%{ background: #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.5) inset, 0 0 10px 0 rgba(255,255,255,1); }
+    40%{ background: #777; box-shadow: 0 0 0 1px rgba(0,0,0,.5) inset, 0 0 0 0 rgba(255,255,255,.3); }
+    60%{ background: #777; box-shadow: 0 0 0 1px rgba(0,0,0,.5) inset, 0 0 0 0 rgba(255,255,255,.3); }
     100%{ background: #fff; box-shadow: 0 0 0 1px rgba(0,0,0,.5) inset, 0 0 10px 0 rgba(255,255,255,1); }
 }
 @keyframes tSpin {
@@ -357,39 +349,35 @@ body {
     to{  transform: rotate(360deg); }
 }
 @keyframes tPos {
-       0%{  transform: translateY(150px) translateX(0px)   translateZ(0px);    }
-      10%{  transform: translateY(180px) translateX(30px)  translateZ(-60px);  }
-      20%{  transform: translateY(140px) translateX(-10px) translateZ(-180px); }
-      40%{  transform: translateY(190px) translateX(-30px) translateZ(-280px); }
-      70%{  transform: translateY(160px) translateX(10px)  translateZ(-100px); }
-      80%{  transform: translateY(140px) translateX(30px)  translateZ(-40px);  }
-      100%{ transform: translateY(150px) translateX(0px)   translateZ(0px);    }
+    0%{  transform: translateY(150px) translateX(0px)   translateZ(0px);    }
+    10%{  transform: translateY(180px) translateX(30px)  translateZ(-60px);  }
+    20%{  transform: translateY(140px) translateX(-10px) translateZ(-180px); }
+    40%{  transform: translateY(190px) translateX(-30px) translateZ(-280px); }
+    70%{  transform: translateY(160px) translateX(10px)  translateZ(-100px); }
+    80%{  transform: translateY(140px) translateX(30px)  translateZ(-40px);  }
+    100%{ transform: translateY(150px) translateX(0px)   translateZ(0px);    }
 }
 @keyframes vSpark {
-      0%{ opacity: 0; top: 40%; left: 30%; transform: rotate(90deg)   scale(1);   }
-     10%{ opacity: 0; top: 40%; left: 30%; transform: rotate(90deg)   scale(1);   }
-     11%{ opacity: 1; top: 40%; left: 30%; transform: rotate(90deg)   scale(1);   }
-     12%{ opacity: 0; top: 40%; left: 30%; transform: rotate(90deg)   scale(1);   }
-     35%{ opacity: 0; top: 20%; left: 70%; transform: rotate(-10deg)  scale(1);   }
-     36%{ opacity: 1; top: 20%; left: 70%; transform: rotate(-10deg)  scale(1);   }
-     37%{ opacity: 0; top: 20%; left: 70%; transform: rotate(-10deg)  scale(1);   }
-     55%{ opacity: 0; top: 10%; left: 50%; transform: rotate(10deg)   scale(0.8); }
-     56%{ opacity: 1; top: 10%; left: 50%; transform: rotate(10deg)   scale(0.8); }
-     57%{ opacity: 0; top: 10%; left: 50%; transform: rotate(10deg)   scale(0.8); }
-     58%{ opacity: 0; top: 10%; left: 48%; transform: rotate(20deg)   scale(0.7); }
-     59%{ opacity: 1; top: 10%; left: 48%; transform: rotate(20deg)   scale(0.7); }
-     60%{ opacity: 0; top: 10%; left: 48%; transform: rotate(20deg)   scale(0.7); }
-     82%{ opacity: 0; top: 80%; left: 60%; transform: rotate(-120deg) scale(1.2); }
-     83%{ opacity: 1; top: 80%; left: 60%; transform: rotate(-120deg) scale(1.2); }
-     84%{ opacity: 0; top: 80%; left: 60%; transform: rotate(-120deg) scale(1.2); }
+    0%{ opacity: 0; top: 40%; left: 30%; transform: rotate(90deg)   scale(1);   }
+    10%{ opacity: 0; top: 40%; left: 30%; transform: rotate(90deg)   scale(1);   }
+    11%{ opacity: 1; top: 40%; left: 30%; transform: rotate(90deg)   scale(1);   }
+    12%{ opacity: 0; top: 40%; left: 30%; transform: rotate(90deg)   scale(1);   }
+    35%{ opacity: 0; top: 20%; left: 70%; transform: rotate(-10deg)  scale(1);   }
+    36%{ opacity: 1; top: 20%; left: 70%; transform: rotate(-10deg)  scale(1);   }
+    37%{ opacity: 0; top: 20%; left: 70%; transform: rotate(-10deg)  scale(1);   }
+    55%{ opacity: 0; top: 10%; left: 50%; transform: rotate(10deg)   scale(0.8); }
+    56%{ opacity: 1; top: 10%; left: 50%; transform: rotate(10deg)   scale(0.8); }
+    57%{ opacity: 0; top: 10%; left: 50%; transform: rotate(10deg)   scale(0.8); }
+    58%{ opacity: 0; top: 10%; left: 48%; transform: rotate(20deg)   scale(0.7); }
+    59%{ opacity: 1; top: 10%; left: 48%; transform: rotate(20deg)   scale(0.7); }
+    60%{ opacity: 0; top: 10%; left: 48%; transform: rotate(20deg)   scale(0.7); }
+    82%{ opacity: 0; top: 80%; left: 60%; transform: rotate(-120deg) scale(1.2); }
+    83%{ opacity: 1; top: 80%; left: 60%; transform: rotate(-120deg) scale(1.2); }
+    84%{ opacity: 0; top: 80%; left: 60%; transform: rotate(-120deg) scale(1.2); }
     100%{ opacity: 0; top: 80%; left: 60%; transform: rotate(-120deg) scale(1);   }
 }
 
-button {
+.button {
     font-family: 'Doctor Who', sans-serif;
     font-size: 30px;
-    padding: 10px;
-    color: #fff;
-    background-color: #24a;
-    border-radius: 25px;
 }
