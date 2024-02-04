@@ -7,6 +7,14 @@ module.exports = {
     ],
     theme: {
         extend: {},
+        fontFamily: {
+            'sans': ['ui-sans-serif', 'system-ui'],
+            'serif': ['ui-serif', 'Georgia'],
+            'mono': ['ui-monospace', 'SFMono-Regular'],
+            'title': ['Doctor who'],
+            'display': ['Fontspace'],
+            'body': ['Fontspace'],
+        },
     },
     darkMode: "class",
     plugins: [require("tw-elements-react/dist/plugin.cjs")]
