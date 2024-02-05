@@ -11,7 +11,9 @@ export default function AppLayout(props) {
         </Link>
       </h1>
       <Header />
-        {props.children}
+        <main className="max-w-lg">
+          {props.children}
+        </main>
       <Footer />
     </>
   )

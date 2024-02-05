@@ -7,7 +7,9 @@ export default function AppLayoutHome(props) {
     <>
       <ArrivalComponent />
       <Header />
-        {props.children}
+        <section className="flex justify-center px-16">
+          {props.children}
+        </section>
       <Footer />
     </>
   )
