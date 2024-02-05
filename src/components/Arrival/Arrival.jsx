@@ -79,13 +79,13 @@ export default function ArrivalComponent() {
                     <div class="vCloud"></div>
                 </div>
             </aside>
-            <button
+            {/* <button
                 type="button"
                 class="mx-auto mt-8 rounded bg-primary text-white hover:bg-primary-600 focus:bg-primary-600">
                 <a href="/home" className="px-6 py-4 font-title text-4xl uppercase leading-normal">
                     Entrer dans l'Univers
                 </a>
-            </button>
+            </button> */}
         </main>
     )
 }
