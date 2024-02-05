@@ -11,9 +11,9 @@ export default function AppLayout(props) {
         </Link>
       </h1>
       <Header />
-        <main className="max-w-lg">
+        <section className="flex flex-col items-center px-16">
           {props.children}
-        </main>
+        </section>
       <Footer />
     </>
   )
