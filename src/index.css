@@ -1,6 +1,17 @@
 @import url('https://fonts.cdnfonts.com/css/doctor-who');
 @import url('https://fonts.cdnfonts.com/css/fontspace');
 @tailwind base;
+
+@layer base {
+  html {
+    @apply text-[#4f4f4f];
+  }
+  html.dark {
+    @apply text-neutral-50;
+    @apply bg-neutral-800;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
 
