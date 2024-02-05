@@ -1,5 +1,6 @@
-import './FirstLook.css'
-export default function FirstLook() {
+import './Arrival.css'
+
+export default function ArrivalComponent() {
     return (
         <main className="flex flex-col items-center mt-8">
             <h1 className="absolute w-1/3 mx-auto font-title text-8xl text-white pt-48">
