@@ -1,113 +1,40 @@
+import { useEffect, useState } from "react";
+import CardElement from "../components/CardElement";
 import AppLayout from "../layout/AppLayout";
+import { getPhotos } from "../service/api/routesApi";
 
 export default function TestElement() {
+  const [ photos, setPhotos ] = useState([])
+
+  useEffect(() => {
+    const fetchApi = async () => {
+      try {
+        const response = await getPhotos()
+        response.status === false ? setPhotos([]) : setPhotos(response.data)
+        console.log(photos)
+      } catch (error) {
+        console.log("Error :", error)
+      }
+    }
+    if (photos.length === 0) {
+      fetchApi()
+    }
+  }, [photos])
+
+
   return (
     <>
       <AppLayout>
-        <div class="container w-full mx-auto px-5 py-2 lg:pt-12">
-          <div class="-m-1 flex flex-wrap md:-m-2">
-            <div class="flex w-1/3 flex-wrap">
-              <div class="w-full p-1 md:p-2">
-                <img
-                  alt="gallery"
-                  class="block h-full w-full rounded-lg object-cover object-center"
-                  src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp" />
-              </div>
-            </div>
-            <div class="flex w-1/3 flex-wrap">
-              <div class="w-full p-1 md:p-2">
-                <img
-                  alt="gallery"
-                  class="block h-full w-full rounded-lg object-cover object-center"
-                  src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(74).webp" />
-              </div>
-            </div>
-            <div class="flex w-1/3 flex-wrap">
-              <div class="w-full p-1 md:p-2">
-                <img
-                  alt="gallery"
-                  class="block h-full w-full rounded-lg object-cover object-center"
-                  src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(75).webp" />
-              </div>
-            </div>
-            <div class="flex w-1/3 flex-wrap">
-              <div class="w-full p-1 md:p-2">
-                <img
-                  alt="gallery"
-                  class="block h-full w-full rounded-lg object-cover object-center"
-                  src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp" />
-              </div>
-            </div>
-            <div class="flex w-1/3 flex-wrap">
-              <div class="w-full p-1 md:p-2">
-                <img
-                  alt="gallery"
-                  class="block h-full w-full rounded-lg object-cover object-center"
-                  src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(76).webp" />
-              </div>
-            </div>
-            <div class="flex w-1/3 flex-wrap">
-              <div class="w-full p-1 md:p-2">
-                <img
-                  alt="gallery"
-                  class="block h-full w-full rounded-lg object-cover object-center"
-                  src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(72).webp" />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="container mx-auto px-5 py-2 lg:pt-12 lg:pb-16">
-          <div class="-m-1 flex flex-wrap md:-m-2">
-            <div class="flex w-1/3 flex-wrap">
-              <div class="w-full p-1 md:p-2">
-                <img
-                  alt="gallery"
-                  class="block h-full w-full rounded-lg object-cover object-center"
-                  src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp" />
-              </div>
-            </div>
-            <div class="flex w-1/3 flex-wrap">
-              <div class="w-full p-1 md:p-2">
-                <img
-                  alt="gallery"
-                  class="block h-full w-full rounded-lg object-cover object-center"
-                  src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(74).webp" />
-              </div>
-            </div>
-            <div class="flex w-1/3 flex-wrap">
-              <div class="w-full p-1 md:p-2">
-                <img
-                  alt="gallery"
-                  class="block h-full w-full rounded-lg object-cover object-center"
-                  src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(75).webp" />
-              </div>
-            </div>
-            <div class="flex w-1/3 flex-wrap">
-              <div class="w-full p-1 md:p-2">
-                <img
-                  alt="gallery"
-                  class="block h-full w-full rounded-lg object-cover object-center"
-                  src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp" />
-              </div>
-            </div>
-            <div class="flex w-1/3 flex-wrap">
-              <div class="w-full p-1 md:p-2">
-                <img
-                  alt="gallery"
-                  class="block h-full w-full rounded-lg object-cover object-center"
-                  src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(76).webp" />
-              </div>
-            </div>
-            <div class="flex w-1/3 flex-wrap">
-              <div class="w-full p-1 md:p-2">
-                <img
-                  alt="gallery"
-                  class="block h-full w-full rounded-lg object-cover object-center"
-                  src="https://tecdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(72).webp" />
-              </div>
-            </div>
-          </div>
+        <div class="container flex flex-wrap gap-2 justify-center mx-auto px-5 py-2 lg:pt-12">
+            {photos.length > 0 ? (
+              photos.map(element => (
+                <div class="w-1/4 flex flex-wrap">
+                  <CardElement key={element.id} class="p-1 md:p-2" source={element.url} title={element.title} text={element.thumbmailUrl} />
+                </div>
+                ))
+            ) : (
+              <p>Loading...</p>
+            )}
         </div>
       </AppLayout>
     </>
