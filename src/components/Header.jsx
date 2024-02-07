@@ -1,17 +1,8 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { Link } from "react-router-dom";
-import {
-  Dropdown,
-  Collapse,
-  Ripple,
-  initTE,
-} from "tw-elements";
 
 export default function Header() {
   const [ menu, setMenu ] = useState("Wiki")
-  useEffect(() => {
-    initTE({ Dropdown, Collapse, Ripple });
-  })
 
   return(
     <>
