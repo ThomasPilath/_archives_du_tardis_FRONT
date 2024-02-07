@@ -13,6 +13,9 @@ WORKDIR /app
 COPY package.json ./
 # Installation des dépendances
 RUN npm install
+# Ajout des arguments / variables d'environnements 
+ARG VITE_API_URL
+ENV VITE_API_URL=$VITE_API_URL
 # Copie du reste des fichiers
 COPY . ./
 # Commande de démarrage de l'application
