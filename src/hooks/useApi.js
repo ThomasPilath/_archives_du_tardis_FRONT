@@ -1,6 +1,4 @@
 import axios from 'axios';
-
-
 export const useApi = () => {
   const headers = {
     "Content-Type": "application/json",
