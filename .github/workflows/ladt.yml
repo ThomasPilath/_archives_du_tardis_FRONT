@@ -9,9 +9,6 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-20.04
 
-    env:
-      VITE_API_URL: ${{ secrets.VITE_API_URL }}
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
