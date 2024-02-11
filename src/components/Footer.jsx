@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
     <footer
-      className="font-body relative bottom-0 start-0 w-full bg-neutral-100 text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left">
+      className="font-body absolute bottom-0 start-0 w-full bg-neutral-100 text-center text-neutral-600 dark:bg-neutral-600 dark:text-neutral-200 lg:text-left">
       <div
-        className="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between">
+        className="flex items-center justify-center border-b-2 border-neutral-200 px-6 py-2 dark:border-neutral-500 lg:justify-between">
         <div className="mr-12 hidden lg:block">
           <span>Restez connectés avec la communauté sur les réseaux sociaux :</span>
         </div>
@@ -75,7 +75,7 @@ export default function Footer() {
       </div>
 
       {/* <!-- Main container */}
-      <div className="mx-6 py-10 text-center md:text-left">
+      <div className="mx-6 py-5 text-center md:text-left">
         <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* <!-- Site section --> */}
           <div className="">
@@ -183,7 +183,7 @@ export default function Footer() {
       </div>
 
       {/* <!--Copyright section--> */}
-      <div className="bg-neutral-200 p-6 text-center dark:bg-neutral-700">
+      <div className="bg-neutral-200 px-6 py-2 text-center dark:bg-neutral-700">
         <span>© 2023 Copyright:</span>
         <a
           className="font-semibold text-neutral-600 dark:text-neutral-400"

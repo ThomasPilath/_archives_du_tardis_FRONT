@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import Footer from '../components/Footer'
-import Header from '../components/Header'
+import NavBar from '../components/NavBar'
 
 export default function AppLayout(props) {
   return (
@@ -10,8 +10,8 @@ export default function AppLayout(props) {
           Les Archives du Tardis
         </Link>
       </h1>
-      <Header />
-        <section className="flex flex-col items-center px-16">
+      <NavBar />
+        <section className="flex flex-col items-center px-16 mb-96">
           {props.children}
         </section>
       <Footer />

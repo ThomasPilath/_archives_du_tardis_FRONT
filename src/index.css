@@ -16,6 +16,14 @@
 @tailwind utilities;
 
 :root {
+  min-width: 100vw;
+  min-height: 100vh;
+  position: relative;
+
+  background-color: #0c1024;
+  margin: 0 auto;
+  text-align: center;
+
   font-family: 'Doctor Who','Fontspace', sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;

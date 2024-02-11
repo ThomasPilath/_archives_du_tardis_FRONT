@@ -29,7 +29,7 @@ export default function TestElement() {
             {photos.length > 0 ? (
               photos.map(element => (
                 <div class="w-1/4 flex flex-wrap">
-                  <CardElement key={element.id} class="p-1 md:p-2" source={element.url} title={element.title} text={element.thumbmailUrl} />
+                  <CardElement key={element.id} class="p-1 md:p-2" image={element.url} title={"Title test"} text={element.title} button={"Voir"} seeText={true} />
                 </div>
                 ))
             ) : (
