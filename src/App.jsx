@@ -20,8 +20,10 @@ export default function App() {
   })
 
 	useEffect(() => {
+		console.log("VITE_API_URL :")
 		console.log(import.meta.env.VITE_API_URL)
-		console.log(import.meta.env.VITE_SITE_TITLE)
+		console.log("API_URL :")
+		console.log(import.meta.env.API_URL)
 	}, [])
 
 	return (
