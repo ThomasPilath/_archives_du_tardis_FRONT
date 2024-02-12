@@ -15,10 +15,14 @@ import {
 } from "tw-elements";
 
 export default function App() {
-
 	useEffect(() => {
     initTE({ Dropdown, Collapse, Ripple });
   })
+
+	useEffect(() => {
+		console.log(import.meta.env.VITE_API_URL)
+		console.log(import.meta.env.VITE_SITE_TITLE)
+	}, [])
 
 	return (
 		<>
