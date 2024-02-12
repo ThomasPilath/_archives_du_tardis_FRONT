@@ -23,7 +23,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
 
-      - name: Build and deploy
+      - name: Build and Push to HUB
         run: |
           docker build -t pilath/ladt:latest .
           docker push pilath/ladt:latest
