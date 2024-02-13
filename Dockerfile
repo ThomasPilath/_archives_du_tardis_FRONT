@@ -26,6 +26,9 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y tzdata
 ENV TZ=Europe/Paris
 RUN cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
+# Ajout des arguments pour l'utilisation des environnements
+ARG VITE_API_URL
+ENV VITE_API_URL=${VITE_API_URL}
 # Faire en sorte de garder que le build de l'app
 COPY --from=BUILD_STAGE /app/dist ./
 COPY --from=BUILD_STAGE /app/node_modules ./node_modules
