@@ -7,6 +7,7 @@ export const useApi = () => {
   };
 
   const apiUrl = import.meta.env.VITE_API_URL || `${VITE_API_URL}`
+  console.log("apiUrl :", apiUrl)
 
   const api = axios.create({
     baseURL: apiUrl,
