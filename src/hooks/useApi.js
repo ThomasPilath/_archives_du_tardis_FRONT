@@ -6,8 +6,12 @@ export const useApi = () => {
     "Access-control-Allow-Origin": "*"
   };
 
+  const apiUrl = import.meta.env.VITE_BASE_URL || import.meta.env.BASE_URL
+  console.log("VITE :", import.meta.env.VITE_BASE_URL)
+  console.log("BASE :", import.meta.env.BASE_URL)
+
   const api = axios.create({
-    baseURL: import.meta.env.VITE_BASE_URL,
+    baseURL: apiUrl,
     headers
   });
 
