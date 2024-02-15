@@ -6,7 +6,7 @@ services:
     ports:
       - "3300:3300"
     environment:
-      VITE_BASE_URL: ${BASE_URL}
+      BASE_URL: ${BASE_URL}
 
     networks:
       - default
