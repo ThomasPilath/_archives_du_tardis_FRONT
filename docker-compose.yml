@@ -5,8 +5,8 @@ services:
     restart: unless-stopped
     ports:
       - "3300:3300"
-    environment:
-      VITE_BASE_URL: ${VITE_BASE_URL}
+    env_file:
+      - stack.env
 
     networks:
       - default
