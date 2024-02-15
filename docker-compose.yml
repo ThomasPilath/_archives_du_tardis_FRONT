@@ -6,7 +6,7 @@ services:
     ports:
       - "3300:3300"
     environment:
-      BASE_URL: https://jsonplaceholder.typicode.com
+      VITE_BASE_URL: ${VITE_BASE_URL}
 
     networks:
       - default

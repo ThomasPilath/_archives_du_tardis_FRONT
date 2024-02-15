@@ -10,8 +10,7 @@ EXPOSE 3300
 # Répertoire de travail dans le conteneur
 WORKDIR /app
 # Définition des variables d'environnement
-ARG BASE_URL
-ENV VITE_BASE_URL=$BASE_URL
+ENV VITE_BASE_URL=${VITE_BASE_URL}
 # Copie des fichiers package.json
 COPY package.json ./
 # Installation des dépendances
