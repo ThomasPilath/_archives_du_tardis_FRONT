@@ -9,8 +9,6 @@ RUN cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
 EXPOSE 3300
 # Répertoire de travail dans le conteneur
 WORKDIR /app
-# Définition des variables d'environnement
-ENV VITE_BASE_URL=${BASE_URL}
 # Copie des fichiers package.json
 COPY package.json ./
 # Installation des dépendances
@@ -22,12 +20,14 @@ RUN npm run build
 
 # Deuxiéme étape pour ne garder que le necessaire
 FROM node:latest
-# Répertoire de travail dans le conteneur
-WORKDIR /app
 # Adapter la timezone du server a la timezone locale (pour les logs)
 RUN apt-get update && apt-get install -y tzdata
 ENV TZ=Europe/Paris
 RUN cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
+# Répertoire de travail dans le conteneur
+WORKDIR /app
+# Définition des variables d'environnement
+ENV VITE_BASE_URL=${VITE_BASE_URL}
 # Faire en sorte de garder que le build de l'app
 COPY --from=BUILD_STAGE /app/dist ./
 COPY --from=BUILD_STAGE /app/node_modules ./node_modules
