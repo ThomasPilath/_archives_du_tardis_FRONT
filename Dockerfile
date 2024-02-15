@@ -30,5 +30,8 @@ RUN cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
 COPY --from=BUILD_STAGE /app/dist ./
 COPY --from=BUILD_STAGE /app/node_modules ./node_modules
 COPY --from=BUILD_STAGE /app/package.json ./package.json
+# Définir les variables d'environnement
+ARG VITE_API_URL
+ARG API_URL
 # Commande de lancement de l'app
 CMD ["npm", "run", "start"]
