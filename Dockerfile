@@ -32,5 +32,6 @@ COPY --from=BUILD_STAGE /app/node_modules ./node_modules
 COPY --from=BUILD_STAGE /app/package.json ./package.json
 # Définir les variables d'environnement
 ARG API_BASE_URL
+ENV API_BASE_URL=${API_BASE_URL}
 # Commande de lancement de l'app
 CMD ["npm", "run", "start"]
