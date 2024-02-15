@@ -9,8 +9,6 @@ RUN cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
 EXPOSE 3300
 # Répertoire de travail dans le conteneur
 WORKDIR /app
-# Définition des variables d'environnement
-ENV VITE_BASE_URL=https://jsonplaceholder.typicode.com
 # Copie des fichiers package.json
 COPY package.json ./
 # Installation des dépendances
@@ -28,8 +26,6 @@ ENV TZ=Europe/Paris
 RUN cp /usr/share/zoneinfo/Europe/Paris /etc/localtime
 # Répertoire de travail dans le conteneur
 WORKDIR /app
-# Définition des variables d'environnement
-ENV VITE_BASE_URL=https://jsonplaceholder.typicode.com
 # Faire en sorte de garder que le build de l'app
 COPY --from=BUILD_STAGE /app/dist ./
 COPY --from=BUILD_STAGE /app/node_modules ./node_modules
